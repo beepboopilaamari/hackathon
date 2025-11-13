@@ -16,8 +16,8 @@ BASE_URL = "https://api.insee.fr/api-sirene/3.11"  # Updated endpoint
 API_KEY = "f339d307-3eac-42e5-b9d3-073eac62e5fb"  # This is your subscription key from the portal
 
 # Test data
-TEST_SIREN = "497784454"
-TEST_SIRET = "49778445400041"
+TEST_SIREN = "312563158"
+TEST_SIRET = "31256315800012"
 
 
 def fetch_siren_data(siren, api_key):
