@@ -12,8 +12,8 @@ BASE_URL = "https://api.insee.fr/api-sirene/3.11"  # Updated endpoint
 
 # You need to get these credentials from https://portail-api.insee.fr/
 # After creating an account and subscribing to the Sirene API
-# The API uses a simple Bearer token (your subscription key)
-API_KEY = "608f9cdc-de13-493b-8f9c-dcde13d93b4a"  # This is your subscription key from the portal
+# The API uses a custom header X-INSEE-Api-Key-Integration
+API_KEY = "f339d307-3eac-42e5-b9d3-073eac62e5fb"  # This is your subscription key from the portal
 
 # Test data
 TEST_SIREN = "497784454"
@@ -26,7 +26,7 @@ def fetch_siren_data(siren, api_key):
     """
     url = f"{BASE_URL}/siren/{siren}"
     headers = {
-        "Authorization": f"Bearer {api_key}",
+        "X-INSEE-Api-Key-Integration": api_key,
         "Accept": "application/json"
     }
     
@@ -48,7 +48,7 @@ def fetch_siret_data(siret, api_key):
     """
     url = f"{BASE_URL}/siret/{siret}"
     headers = {
-        "Authorization": f"Bearer {api_key}",
+        "X-INSEE-Api-Key-Integration": api_key,
         "Accept": "application/json"
     }
     
